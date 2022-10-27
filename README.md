@@ -1,5 +1,5 @@
 # About Me
-I am a Research Scientists in Artificial Intelligence working on Natural Language Processing at Meta AI with an interest on how to make AI safer and more aligned with human values.
+I am a Research Engineer enthusiast in Artificial Intelligence working actively on Computer Vision and Natural Language Processing. I'm currently building an AI research group called [WedOO.ai][https://www.linkedin.com/company/wedoo-ai/]
 
 I completed my PhD at Facebook AI Research on the subject of text simplification and how to use AI to help people with cognitive disabilities.
 
