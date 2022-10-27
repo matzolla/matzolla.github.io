@@ -10,3 +10,6 @@ I completed my master degree at the African Institute for Mathematical Sciences 
 - Feb 2021: I Co-organized [WedOO.ai](https://www.linkedin.com/company/wedoo-ai/) first data science [competition](https://zindi.africa/competitions/cameroon-fraud-detection-in-electricity-and-gas-consumption-challenge) in [ZINDI-Africa](https://zindi.africa)
 - Nov 2021: I am a guess speaker at the [IndabaX Cameroon](https://deeplearningindaba.com/2021/indabax/indabax-cameroon/)
  
+ # Selected and Invited Talks
+ 
+ - Sep 2021: Lectured the _9th_ cohort of AIMS on [_Data Prediction in Wireless Sensor Network_](https://aims-cameroon.org/researcher/2021-alumnus-allassan-nkeng-lectures-students-on-data-prediction-in-wireless-sensor-networks/).
