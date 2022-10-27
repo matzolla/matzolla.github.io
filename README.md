@@ -5,5 +5,7 @@ I completed my master degree at the African Institute for Mathematical Sciences 
 
 # News
 
+- Feb 2021: I Co-organized [WedOO.ai](https://www.linkedin.com/company/wedoo-ai/) first data science [competition](https://zindi.africa/competitions/cameroon-fraud-detection-in-electricity-and-gas-consumption-challenge) in [ZINDI-Africa](https://zindi.africa)
 - Nov 2021: I am a guess speaker at the [IndabaX Cameroon](https://deeplearningindaba.com/2021/indabax/indabax-cameroon/)
 - 
+ 
