@@ -13,3 +13,4 @@ I completed my master degree at the African Institute for Mathematical Sciences 
  # Selected and Invited Talks
  
  - Sep 2021: Lectured the _9th_ cohort of AIMS on [_Data Prediction in Wireless Sensor Network_](https://aims-cameroon.org/researcher/2021-alumnus-allassan-nkeng-lectures-students-on-data-prediction-in-wireless-sensor-networks/).
+ - May 2022: Presented my work on _Makerere Passion Fruit Disease Detection_ using [Faster-RCNN](https://arxiv.org/abs/1506.01497) in the _AIMS Data Science Research Group_.
