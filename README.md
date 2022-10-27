@@ -5,4 +5,5 @@ I completed my master degree at the African Institute for Mathematical Sciences 
 
 # News
 
+- Nov 2021: I am a guess speaker at the [IndabaX Cameroon](https://deeplearningindaba.com/2021/indabax/indabax-cameroon/)
 - 
