@@ -14,3 +14,11 @@ I completed my master degree at the African Institute for Mathematical Sciences 
  
  - Sep 2021: Lectured the _9th_ cohort of AIMS on [_Data Prediction in Wireless Sensor Network_](https://aims-cameroon.org/researcher/2021-alumnus-allassan-nkeng-lectures-students-on-data-prediction-in-wireless-sensor-networks/).
  - May 2022: Presented my work on _Makerere Passion Fruit Disease Detection_ using [Faster-RCNN](https://arxiv.org/abs/1506.01497) in the _AIMS Data Science Research Group_.
+
+# Research and Publication
+
+I am currently working on NLP with interest in entity discovery together with Dr. [Louis Martin](https://louismartin.eu), research scientist at [Meta AI](https://ai.facebook.com). The main interest of our research is to be able to discover similar and  new hashtags from tweets, using latent space clustering. We aim to use a pretrain language model to extract embeddings, and use a generative model to perform clustering. The rest of my work include:
+
+- Oct 2022: **[Data Prediction Based Encoder-Decoder Learning in Wireless Sensor Networks](https://ieeexplore.ieee.org/document/9915570)**, accepted and published in [IEEE Xplore](https://ieeexplore.ieee.org). Co-authors: [Arouna Ndam Njoya](https://ieeexplore.ieee.org/author/37085710472),[Berthine Nyunga Mpinda](https://ieeexplore.ieee.org/author/37089569374), [Christopher Thron](https://ieeexplore.ieee.org/author/37085676820), [Ado Adamou Abba Ari](https://ieeexplore.ieee.org/author/37086960635), [Ousmane Thiare](https://ieeexplore.ieee.org/author/37832417100),[Emmanuel Tonye](https://ieeexplore.ieee.org/author/37603754000),[Abdelhak Gueroui](https://ieeexplore.ieee.org/author/37284836300).
+
+
