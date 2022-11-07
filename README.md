@@ -14,12 +14,16 @@ I completed my master degree at the African Institute for Mathematical Sciences 
 
 # Community Engagements
 
-- Sept 2022: Became One of the Cameroon's ZINDI ambassador. [Zindi Africa](https://zindi.africa) is a data science competition platform and a learning community that brings together data scientist across the world to provide top solutions to real world problems via series of competition. My main role as a Zindi Ambassador is to sensitize aspiring data scientist and data science communitites to leverage their skills in the Zindi Community
+- Sept 2022: Became One of the Cameroon's ZINDI ambassador. [Zindi Africa](https://zindi.africa) is a data science competition platform and a learning community that brings together data scientist across the world to provide top solutions to real world problems via series of competition. My main role as a Zindi Ambassador is to sensitize aspiring data scientist and data science communitites to leverage their skills in the Zindi Community.
 
 # Selected and Invited Talks
  
  - Sep 2021: Lectured the _9th_ cohort of AIMS on [_Data Prediction in Wireless Sensor Network_](https://aims-cameroon.org/researcher/2021-alumnus-allassan-nkeng-lectures-students-on-data-prediction-in-wireless-sensor-networks/).
  - May 2022: Presented my work on _Makerere Passion Fruit Disease Detection_ using [Faster-RCNN](https://arxiv.org/abs/1506.01497) in the _AIMS Data Science Research Group_.
+ 
+# Awards
+
+- Mar 2021: 3rd prize winner of the [AIMS-Microsoft data science hackathon](https://zindi.africa/competitions/aims-data-science-hackathon) launched in the [ZINDI](https://zindi.africa) platform. The competition entails us to build a machine learning model that can accurately predict the wealth index of 7 african countries inorder to help governments and policy makers to make inform decision concerning poverty.
 
 # Research and Publication
 
