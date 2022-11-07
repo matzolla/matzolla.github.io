@@ -12,6 +12,10 @@ I completed my master degree at the African Institute for Mathematical Sciences 
 - Feb 2021: I Co-organized [WedOO.ai](https://www.linkedin.com/company/wedoo-ai/) first data science [competition](https://zindi.africa/competitions/cameroon-fraud-detection-in-electricity-and-gas-consumption-challenge) in [ZINDI-Africa](https://zindi.africa)
 - Nov 2021: I am a guess speaker at the [IndabaX Cameroon](https://deeplearningindaba.com/2021/indabax/indabax-cameroon/).
 
+# Community Engagements
+
+- Sept 2022: Became One of the Cameroon's ZINDI ambassador. [Zindi Africa](https://zindi.africa) is a data science competition platform and a learning community that brings together data scientist across the world to provide top solutions to real world problems via series of competition. My main role as a Zindi Ambassador is to sensitize aspiring data scientist and data science communitites to leverage their skills in the Zindi Community
+
 # Selected and Invited Talks
  
  - Sep 2021: Lectured the _9th_ cohort of AIMS on [_Data Prediction in Wireless Sensor Network_](https://aims-cameroon.org/researcher/2021-alumnus-allassan-nkeng-lectures-students-on-data-prediction-in-wireless-sensor-networks/).
