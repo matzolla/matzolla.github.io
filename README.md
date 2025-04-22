@@ -1,6 +1,6 @@
 # About Me
 
-![Book logo](me.png)
+![Book logo](me.jpg)
 
 I am a Research Scientist in Artificial Intelligence working actively on Computer Vision, Natural Language Processing and foundation of machine learning and deep learning. I'm currently building an AI research group called [WedOO.ai](https://www.linkedin.com/company/wedoo-ai/) where we can team up with brillant minds and contribute to breakthrough in medecine, agriculture, robotics and language resources.
 
