@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Allassan Tchangmena A Nken — PhD researcher in efficient, privacy-preserving video understanding at the University of Galway.">
+<title>Allassan Tchangmena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (max 980px) under a sticky nav; hero pairs photo + name,
+   then sections stack with a left label rail on wide screens. Sky-blue on white, navy in dark. */
+:root{
+  --bg:#ffffff;
+  --surface:#f3f9fe;
+  --ink:#0f2537;
+  --muted:#58708a;
+  --line:#dbe9f5;
+  --sky:#2a9fd8;
+  --sky-strong:#0b7fbd;
+  --sky-soft:#e3f3fc;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Public Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+/* Light by default. Dark only when the visitor clicks the moon button. */
+:root[data-theme="dark"]{
+  --bg:#0b1824; --surface:#112333; --ink:#e7f2fb; --muted:#93abc0;
+  --line:#1f3a52; --sky:#5cc1f0; --sky-strong:#8ad4f7; --sky-soft:#13314a;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--sky-strong);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--sky)}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.nav .brand{font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav .brand span{color:var(--sky)}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav ul::-webkit-scrollbar{display:none}
+.nav ul a{display:block;padding:6px 10px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+.theme-btn{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.theme-btn:hover{color:var(--sky-strong);border-color:var(--sky)}
+.theme-btn svg{width:17px;height:17px}
+.nav ul a:hover{color:var(--sky-strong);background:var(--sky-soft)}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:64px 48px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.photo{position:relative;width:200px;aspect-ratio:1;max-width:100%;margin:36px}
+.photo .frame{position:absolute;inset:0;border-radius:50%;background:var(--sky-soft);border:1px solid var(--line);overflow:hidden;display:grid;place-items:center}
+.photo .frame img{width:100%;height:100%;object-fit:cover}
+.photo .initials{font-family:var(--display);font-size:64px;font-weight:700;color:var(--sky)}
+.photo .ph-note{position:absolute;bottom:22%;left:0;right:0;text-align:center;font-family:var(--mono);font-size:11px;color:var(--muted)}
+/* frame-strip motif: a nod to video frames for HAR research */
+.photo .frame{box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--sky)}
+/* concentric rings behind the circular photo */
+.photo::before,.photo::after{content:"";position:absolute;border-radius:50%;border:1px solid var(--line);z-index:-1;pointer-events:none}
+.photo::before{inset:-18px;background:var(--surface)}
+.photo::after{inset:-36px;border-style:dashed;opacity:.8}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--sky-strong);margin:0 0 12px}
+.hero h1{font-size:clamp(36px,6vw,56px);font-weight:700;letter-spacing:-.02em}
+.hero .role{font-size:18px;color:var(--muted);margin:14px 0 0;max-width:58ch}
+.hero .role strong{color:var(--ink);font-weight:600}
+.avail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:6px 14px;border-radius:999px;background:var(--sky-soft);color:var(--sky-strong);font-size:14px;font-weight:600}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sky)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 14px var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--sky);color:var(--sky-strong)}
+.btn.primary{background:var(--sky-strong);border-color:var(--sky-strong);color:#fff}
+.btn.primary:hover{background:var(--sky);border-color:var(--sky);color:#fff}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ---------- Sections ---------- */
+section.block{padding-block:56px;border-top:1px solid var(--line)}
+section.block .wrap{display:grid;grid-template-columns:180px 1fr;gap:32px}
+section.block h2{font-size:22px;font-weight:700;position:sticky;top:84px;align-self:start}
+section.block h2 small{display:block;font:400 13px var(--body);color:var(--muted);margin-top:6px;letter-spacing:0}
+.content{min-width:0}
+.content p{margin:0 0 14px;max-width:66ch}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;padding:0;list-style:none}
+.tags li{padding:4px 12px;border-radius:999px;border:1px solid var(--line);font-size:13.5px;color:var(--muted);background:var(--surface)}
+
+/* News */
+.news{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.news li{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.news li:last-child{border-bottom:0}
+.news time{font-family:var(--mono);font-size:13px;color:var(--sky-strong);padding-top:2px;font-variant-numeric:tabular-nums}
+.news .hot{display:inline-block;margin-right:6px;padding:1px 8px;border-radius:6px;background:var(--sky-strong);color:#fff;font-size:11.5px;font-weight:600;letter-spacing:.03em;vertical-align:1px}
+.more{margin-top:10px;background:none;border:0;color:var(--sky-strong);font:600 14px var(--body);cursor:pointer;padding:6px 0}
+
+/* Publications */
+.pubs{display:grid;gap:22px}
+.pub{display:grid;grid-template-columns:220px 1fr;gap:22px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--bg)}
+.pub.featured{background:var(--surface)}
+.media{aspect-ratio:16/10;max-width:100%;border-radius:12px;overflow:hidden;background:var(--sky-soft);border:1px dashed color-mix(in srgb,var(--sky) 45%,var(--line));display:grid;place-items:center;text-align:center}
+.media img,.media video{width:100%;height:100%;object-fit:cover;display:block}
+.media .ph{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:12px;line-height:1.5}
+.media .ph b{display:block;color:var(--sky-strong);font-size:22px;margin-bottom:4px}
+.pub .body{min-width:0}
+.venue{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:500;padding:3px 9px;border-radius:6px;background:var(--sky-soft);color:var(--sky-strong);margin-bottom:8px}
+.venue.ws{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.pub h3{font-size:18.5px;font-weight:600;margin-bottom:6px}
+.authors{font-size:14px;color:var(--muted);margin:0 0 8px}
+.authors .me{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--sky);text-underline-offset:3px}
+.pub .desc{font-size:15px;margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;border:1px solid var(--line);font:500 13px var(--body);color:var(--ink);background:var(--bg);text-decoration:none;cursor:pointer}
+.chip:hover{border-color:var(--sky);color:var(--sky-strong)}
+.bib{display:none;margin-top:12px;overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:12.5px/1.55 var(--mono);color:var(--ink);white-space:pre}
+.bib.open{display:block}
+
+/* Timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:26px}
+.tl li{display:grid;grid-template-columns:120px 1fr;gap:20px}
+.tl .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.tl h3{font-size:17px;font-weight:600}
+.tl .org{color:var(--sky-strong);font-weight:500;font-size:15px;margin:2px 0 6px}
+.tl p{margin:0;font-size:15px}
+.tl .sup{font-size:13.5px;color:var(--muted);margin-top:6px}
+
+/* Projects */
+.proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.proj{padding:20px;border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.proj.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 280px;gap:22px;background:var(--surface)}
+.proj h3{font-size:18px;font-weight:600}
+.proj .kind{font-family:var(--mono);font-size:12px;color:var(--sky-strong);text-transform:uppercase;letter-spacing:.05em}
+.proj p{margin:0;font-size:15px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.stack span{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.proj.wide .stack span{background:var(--bg)}
+
+/* Simple lists */
+.plain{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.plain li{display:grid;grid-template-columns:120px 1fr;gap:20px;font-size:15px}
+.plain .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:2px}
+
+/* Contact */
+.contact-card{padding:28px;border-radius:20px;background:var(--sky-soft);border:1px solid var(--line)}
+.contact-card p{margin:0 0 16px}
+.email-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.email{font-family:var(--mono);font-size:15px;padding:9px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line);user-select:all;word-break:break-all}
+
+footer{padding-block:28px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:10px;font-size:14px;pointer-events:none;transition:.2s}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:820px){
+  section.block .wrap{grid-template-columns:1fr;gap:18px}
+  section.block h2{position:static}
+  .pub{grid-template-columns:1fr}
+  .proj.wide{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .hero{padding-block:36px 32px}
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .photo{width:150px;margin:30px}
+  .photo::after{inset:-28px}
+  .photo::before{inset:-14px}
+  .photo .initials{font-size:46px}
+  .proj-grid{grid-template-columns:1fr}
+  .news li,.tl li,.plain li{grid-template-columns:1fr;gap:4px}
+  .nav .brand{display:none}
+  .nav ul{margin-left:0}
+}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<!--
+  ===================================================================
+  HOW TO EDIT THIS SITE
+  Everything you'll update regularly lives in the SITE object in the
+  <script> at the bottom: links, photo, news, papers, experience,
+  projects. Add a news item by adding one line to SITE.news.
+  For images/videos: put the file next to this page (e.g. media/dprp.png)
+  and set   media: { type: "image", src: "media/dprp.png" }
+  or        media: { type: "video", src: "media/demo.mp4" }
+  ===================================================================
+-->
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Allassan<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch to dark mode"></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="photo" aria-label="Profile photo">
+      <div class="frame" id="photo-frame">
+        <span class="initials">AT</span>
+        <span class="ph-note">your photo here</span>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">PhD Researcher · Computer Vision &amp; Privacy</p>
+      <h1>Allassan Tchangmena A Nken</h1>
+      <p class="role">I build <strong>efficient, privacy-preserving</strong> methods for video understanding, using differential privacy, federated learning and low-rank structure to recognise human activity without exposing who is in the frame.</p>
+      <div class="avail">Open to Research Scientist roles from July 2027</div>
+      <div class="links" id="hero-links"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block" id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="content">
+        <p>I'm a PhD candidate in Computer Science at the <a href="https://www.universityofgalway.ie/" target="_blank" rel="noopener">University of Galway</a>, part of the SFI Centre for Research Training in Digitally Enhanced Reality (D-REAL), supervised by Ihsan Ullah, Susan McKeever and Peter Corcoran.</p>
+        <p>My research asks how far we can shrink the data and compute footprint of video Human Activity Recognition while keeping people private. My work combines differential privacy, federated learning, random projections and singular value decomposition, and has appeared at IJCAI, ECML PKDD and ICIP.</p>
+        <p>Before Galway I trained at AIMS Cameroon and the African Masters in Machine Intelligence (AMMI), and interned at IBM Research Africa, where I worked on retrieval for LLM embeddings. Outside the lab I'm building MarketPulse, a price intelligence platform for African informal markets.</p>
+        <ul class="tags" aria-label="Research interests">
+          <li>Privacy-preserving ML</li><li>Video understanding</li><li>Federated learning</li>
+          <li>Differential privacy</li><li>Efficient deep learning</li><li>Information retrieval</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="news">
+    <div class="wrap">
+      <h2>News</h2>
+      <div class="content">
+        <ul class="news" id="news-list"></ul>
+        <button class="more" id="news-more" hidden>Show older news</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="publications">
+    <div class="wrap">
+      <h2>Publications<small>Conference papers and workshops</small></h2>
+      <div class="content"><div class="pubs" id="pub-list"></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <div class="content"><ul class="tl" id="exp-list"></ul></div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <h2>Projects<small>Products and open-source code</small></h2>
+      <div class="content"><div class="proj-grid" id="proj-list"></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="content"><ul class="tl" id="edu-list"></ul></div>
+    </div>
+  </section>
+
+  <section class="block" id="service">
+    <div class="wrap">
+      <h2>Service &amp; Awards</h2>
+      <div class="content"><ul class="plain" id="service-list"></ul></div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <div class="content">
+        <div class="contact-card">
+          <p>I'm happy to talk about research collaborations, internships and full-time research roles. Email is the best way to reach me.</p>
+          <div class="email-row">
+            <span class="email" id="email-text"></span>
+            <button class="btn primary" id="copy-email" type="button">Copy email</button>
+          </div>
+          <div class="links" id="contact-links"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Allassan Tchangmena A Nken · Galway, Ireland</span>
+    <span>Last updated October 2026</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =================== EDIT YOUR CONTENT HERE =================== */
+const SITE = {
+  email: "a.tchangmenaanken1@universityofgalway.ie",
+  photo: "me.jpg",           // e.g. "media/photo.jpg" — leave "" to show initials
+  links: {
+    cv:       "",            // e.g. "CV_Allassan_2026.pdf"
+    scholar:  "",            // Google Scholar profile URL
+    github:   "https://github.com/matzolla",
+    linkedin: "https://www.linkedin.com/" // ← replace with your LinkedIn URL
+  },
+  me: "Allassan Tchangmena A Nken",
+
+  // Newest first. hot:true adds a "New" badge.
+  news: [
+    { date: "Aug 2026", hot: true, html: "Co-organised the <b>TrustAI Workshop</b> at the Deep Learning Indaba 2026." },
+    { date: "2026", hot: true, html: "Paper on communication-efficient federated video HAR accepted at <b>IJCAI 2026</b>." },
+    { date: "Jun 2026", html: "Launched <b>MarketPulse</b>, a crowdsourced price intelligence platform for African informal markets." },
+    { date: "2026", html: "Retrieval with multiple query vectors (with IBM Research) accepted at the <b>AAAI 2026</b> Frontier of Information Retrieval workshop." },
+    { date: "Sep 2025", html: "Elected President of the Mathematical Collaborative Forum (MCF)." },
+    { date: "Aug 2025", html: "Wrapped up my Research Scientist internship at <b>IBM Research, Nairobi</b>." },
+    { date: "2025", html: "Video-DPRP accepted at <b>ECML PKDD 2025</b>." },
+    { date: "2025", html: "Probabilistic sampling with Frobenius norm accepted at <b>IEEE ICIP 2025</b>." },
+    { date: "Oct 2023", html: "Started my PhD at the University of Galway (SFI D-REAL)." }
+  ],
+  newsShown: 6,
+
+  // media: { type: "image"|"video", src: "path" } — leave src "" for a placeholder
+  publications: [
+    {
+      venue: "IJCAI 2026", featured: true,
+      title: "Communication-Efficient Federated Video Human Activity Recognition via Discriminative Subspace Discovery",
+      authors: ["Allassan Tchangmena A Nken","Susan McKeever","Peter Corcoran","Ihsan Ullah"],
+      desc: "Federated training of video models is expensive because clients exchange large updates. This work discovers compact discriminative subspaces so clients can collaborate on activity recognition while sending far less over the network.",
+      media: { type: "image", src: "" },
+      links: { paper: "", code: "" },
+      bib: { key: "nken2026federated", type: "inproceedings", booktitle: "Proceedings of the International Joint Conference on Artificial Intelligence (IJCAI)", year: "2026" }
+    },
+    {
+      venue: "ECML PKDD 2025",
+      title: "Video-DPRP: A Differentially Private Approach for Visual Privacy-Preserving Video Human Activity Recognition",
+      authors: ["Allassan Tchangmena A Nken","Susan McKeever","Peter Corcoran","Ihsan Ullah"],
+      desc: "A differentially private pipeline that protects the visual identity of people in video while keeping enough signal to recognise what they are doing.",
+      media: { type: "image", src: "" },
+      links: { paper: "", code: "" },
+      bib: { key: "nken2025videodprp", type: "inproceedings", booktitle: "Joint European Conference on Machine Learning and Knowledge Discovery in Databases (ECML PKDD)", pages: "345--362", publisher: "Springer", year: "2025" }
+    },
+    {
+      venue: "IEEE ICIP 2025",
+      title: "Probabilistic Sampling with Frobenius Norm for Action Recognition",
+      authors: ["Allassan Tchangmena A Nken","Susan McKeever","Peter Corcoran","Ihsan Ullah"],
+      desc: "Selects informative frames using a Frobenius-norm-based probabilistic sampler, cutting the compute needed for action recognition without hand-tuned frame selection.",
+      media: { type: "image", src: "" },
+      links: { paper: "", code: "" },
+      bib: { key: "nken2025probabilistic", type: "inproceedings", booktitle: "IEEE International Conference on Image Processing (ICIP)", publisher: "IEEE", year: "2025" }
+    },
+    {
+      venue: "AAAI 2026 Workshop", workshop: true,
+      title: "Retrieval with Multiple Query Vectors through Anomalous Pattern Detection",
+      authors: ["Allassan Tchangmena A Nken","Baimam Boukar Jean Jacques","Miriam Rateike","Celia Cintas","Skyler Speakman"],
+      desc: "Retrieves matching LLM embeddings from several query vectors by finding anomalous dimensions via tail p-values. It beats KDTree baselines on precision and recall and needs no retrieval size set in advance.",
+      media: { type: "image", src: "" },
+      links: { paper: "", code: "" },
+      bib: { key: "nken2026retrieval", type: "inproceedings", booktitle: "Workshop on Frontiers of Information Retrieval at AAAI", year: "2026" }
+    }
+  ],
+
+  experience: [
+    { when: "Jun – Aug 2025", title: "Research Scientist Intern", org: "IBM Research · Nairobi, Kenya",
+      text: "Developed a multi-query-vector retrieval algorithm that identifies anomalous dimensions via tail p-values to retrieve matching LLM embeddings, outperforming KDTree baselines on precision and recall.",
+      sup: "Mentors: Skyler Speakman, Miriam Rateike, Celia Cintas" },
+    { when: "Jun – Aug 2023", title: "Research Fellow", org: "Data Science for Social Good · Coventry, UK",
+      text: "Built a multimodal model to detect green messaging in companies' social media text and images, to help identify greenwashing.",
+      sup: "Mentors: Geoffrey Supran, John Cook" },
+    { when: "Oct – Dec 2021", title: "Junior Machine Learning Engineer", org: "Omdena · Remote",
+      text: "Benchmarked fine-tuned ResNet50, AlexNet and VGG16 for attribute detection on live-stream video frames." }
+  ],
+
+  // Add open-source repos here as you publish them (kind: "Open source")
+  projects: [
+    { wide: true, kind: "Founder & lead developer · 2026", title: "MarketPulse", url: "https://marketpulse.africa",
+      text: "Informal markets in sub-Saharan Africa handle over USD 684 billion a year, yet a buyer at Marché Essos in Yaoundé can't tell whether 500 FCFA for a cup of rice is fair. MarketPulse lets people report and query real-time commodity prices by market, buyer type (wholesale, household, unit) and informal units like heap size. It returns price intervals, confidence scores based on report density, and overcharge warnings calibrated to local norms.",
+      stack: ["React","Supabase","PostgreSQL","Claude API"],
+      media: { type: "image", src: "" } },
+    { kind: "Open source", title: "Video-DPRP code", url: "",
+      text: "Reference implementation of differentially private video HAR from the ECML PKDD 2025 paper.",
+      stack: ["PyTorch","Differential privacy"] },
+    { kind: "Open source", title: "Federated subspace HAR", url: "",
+      text: "Training code for communication-efficient federated activity recognition (IJCAI 2026).",
+      stack: ["PyTorch","Federated learning"] }
+  ],
+
+  education: [
+    { when: "2023 – 2027", title: "PhD, Computer Science", org: "University of Galway, Ireland",
+      text: "Thesis on computationally efficient, privacy-preserving video Human Activity Recognition. SFI Centre for Research Training in Digitally Enhanced Reality (D-REAL). Expected August 2027." },
+    { when: "2022 – 2023", title: "MSc, Machine Learning & Machine Intelligence", org: "African Masters in Machine Intelligence (AMMI), Senegal",
+      text: "Scholarship sponsored by Google and Meta AI. Coursework in kernel methods, geometric deep learning, optimisation, computer vision and language modelling." },
+    { when: "2020 – 2021", title: "MSc, Mathematical Sciences", org: "African Institute for Mathematical Sciences (AIMS), Cameroon",
+      text: "Coursework in machine learning, statistical inference, functional analysis, computer vision and NLP." }
+  ],
+
+  service: [
+    { when: "Reviewer", html: "ICLR, AAAI, WACV, BMVC" },
+    { when: "2026", html: "Co-organiser, TrustAI Workshop at Deep Learning Indaba" },
+    { when: "2025 – 2026", html: "President, Mathematical Collaborative Forum (MCF)" },
+    { when: "2022", html: "AMMI Scholar, sponsored by Google and Meta AI" },
+    { when: "2021", html: "3rd prize, Microsoft–AIMS Data Science Hackathon: predicting household wealth index across 7 African countries" }
+  ]
+};
+/* ================= END OF CONTENT ================= */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ICON = {
+  github:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>',
+  linkedin:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>',
+  scholar:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l11 7 9-5.7V17h2V9L12 2Zm-6 11.2V17c0 2.2 2.7 4 6 4s6-1.8 6-4v-3.8l-6 3.8-6-3.8Z"/></svg>',
+  cv:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+  mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>'
+};
+
+function linkButtons(primaryEmail){
+  const L = SITE.links, out = [];
+  if (primaryEmail) out.push(`<a class="btn primary" href="#contact">${ICON.mail}Get in touch</a>`);
+  if (L.cv) out.push(`<a class="btn" href="${esc(L.cv)}" target="_blank" rel="noopener">${ICON.cv}CV</a>`);
+  if (L.scholar) out.push(`<a class="btn" href="${esc(L.scholar)}" target="_blank" rel="noopener">${ICON.scholar}Scholar</a>`);
+  if (L.github) out.push(`<a class="btn" href="${esc(L.github)}" target="_blank" rel="noopener">${ICON.github}GitHub</a>`);
+  if (L.linkedin) out.push(`<a class="btn" href="${esc(L.linkedin)}" target="_blank" rel="noopener">${ICON.linkedin}LinkedIn</a>`);
+  return out.join("");
+}
+$("#hero-links").innerHTML = linkButtons(true);
+$("#contact-links").innerHTML = linkButtons(false);
+$("#contact-links").style.marginTop = "18px";
+
+if (SITE.photo) $("#photo-frame").innerHTML = `<img src="${esc(SITE.photo)}" alt="Portrait of ${esc(SITE.me)}">`;
+
+/* News */
+function renderNews(all){
+  const items = all ? SITE.news : SITE.news.slice(0, SITE.newsShown);
+  $("#news-list").innerHTML = items.map(n =>
+    `<li><time>${esc(n.date)}</time><div>${n.hot ? '<span class="hot">New</span>' : ''}${n.html}</div></li>`).join("");
+  $("#news-more").hidden = all || SITE.news.length <= SITE.newsShown;
+}
+renderNews(false);
+$("#news-more").addEventListener("click", () => renderNews(true));
+
+/* Media */
+function mediaHTML(m, label){
+  if (m && m.src){
+    return m.type === "video"
+      ? `<video src="${esc(m.src)}" muted loop playsinline controls preload="metadata"></video>`
+      : `<img src="${esc(m.src)}" alt="${esc(label)}" loading="lazy">`;
+  }
+  return `<div class="ph"><b>+</b>Teaser figure or video<br>set media.src</div>`;
+}
+
+/* Publications */
+function bibtex(p){
+  const b = p.bib, f = [
+    `  title     = {${p.title}}`,
+    `  author    = {${p.authors.join(" and ")}}`,
+    `  booktitle = {${b.booktitle}}`];
+  if (b.pages) f.push(`  pages     = {${b.pages}}`);
+  if (b.publisher) f.push(`  publisher = {${b.publisher}}`);
+  f.push(`  year      = {${b.year}}`);
+  return `@${b.type}{${b.key},\n${f.join(",\n")}\n}`;
+}
+$("#pub-list").innerHTML = SITE.publications.map((p, i) => {
+  const authors = p.authors.map(a => a === SITE.me ? `<span class="me">${esc(a)}</span>` : esc(a)).join(", ");
+  const chips = [];
+  if (p.links.paper) chips.push(`<a class="chip" href="${esc(p.links.paper)}" target="_blank" rel="noopener">Paper</a>`);
+  if (p.links.code) chips.push(`<a class="chip" href="${esc(p.links.code)}" target="_blank" rel="noopener">Code</a>`);
+  chips.push(`<button class="chip" type="button" data-bib="${i}" aria-expanded="false">BibTeX</button>`);
+  return `<article class="pub${p.featured ? " featured" : ""}">
+    <div class="media">${mediaHTML(p.media, p.title)}</div>
+    <div class="body">
+      <span class="venue${p.workshop ? " ws" : ""}">${esc(p.venue)}</span>
+      <h3>${esc(p.title)}</h3>
+      <p class="authors">${authors}</p>
+      <p class="desc">${esc(p.desc)}</p>
+      <div class="chips">${chips.join("")}</div>
+      <pre class="bib" id="bib-${i}">${esc(bibtex(p))}</pre>
+    </div></article>`;
+}).join("");
+
+document.querySelectorAll("[data-bib]").forEach(btn => btn.addEventListener("click", () => {
+  const i = btn.dataset.bib, box = $("#bib-" + i), open = box.classList.toggle("open");
+  btn.setAttribute("aria-expanded", open);
+  if (open) copy(bibtex(SITE.publications[i]), "BibTeX copied");
+}));
+
+/* Timelines */
+const tl = arr => arr.map(e => `<li><span class="when">${esc(e.when)}</span><div>
+  <h3>${esc(e.title)}</h3><div class="org">${esc(e.org)}</div><p>${esc(e.text)}</p>
+  ${e.sup ? `<div class="sup">${esc(e.sup)}</div>` : ""}</div></li>`).join("");
+$("#exp-list").innerHTML = tl(SITE.experience);
+$("#edu-list").innerHTML = tl(SITE.education);
+
+/* Projects */
+$("#proj-list").innerHTML = SITE.projects.map(p => {
+  const title = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)} ↗</a>` : esc(p.title);
+  const inner = `<span class="kind">${esc(p.kind)}</span><h3>${title}</h3><p>${esc(p.text)}</p>
+    <div class="stack">${p.stack.map(s => `<span>${esc(s)}</span>`).join("")}</div>`;
+  return p.wide
+    ? `<article class="proj wide"><div style="display:flex;flex-direction:column;gap:10px;min-width:0">${inner}</div><div class="media">${mediaHTML(p.media, p.title)}</div></article>`
+    : `<article class="proj">${inner}</article>`;
+}).join("");
+
+$("#service-list").innerHTML = SITE.service.map(s =>
+  `<li><span class="when">${esc(s.when)}</span><span>${esc(s.html)}</span></li>`).join("");
+
+/* Theme toggle: light by default */
+const SUN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+const MOON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>';
+function setTheme(t, save){
+  document.documentElement.setAttribute("data-theme", t);
+  const b = $("#theme-btn"); b.innerHTML = t === "dark" ? SUN : MOON;
+  b.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  if (save) try { localStorage.setItem("theme", t); } catch(e) {}
+}
+let saved = null; try { saved = localStorage.getItem("theme"); } catch(e) {}
+setTheme(saved === "dark" ? "dark" : "light", false);
+$("#theme-btn").addEventListener("click", () =>
+  setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark", true));
+
+/* Email + copy */
+$("#email-text").textContent = SITE.email;
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 1800); }
+function copy(text, msg){
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(() => toast(msg), () => toast("Select the text to copy it"));
+  } else toast("Select the text to copy it");
+}
+$("#copy-email").addEventListener("click", () => {
+  copy(SITE.email, "Email copied");
+  const r = document.createRange(); r.selectNodeContents($("#email-text"));
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+});
+</script>
+
+</body>
+</html>
